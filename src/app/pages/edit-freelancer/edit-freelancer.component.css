@@ -1,0 +1,15 @@
+[nz-button] {
+    margin-right: 8px;
+    /* float: right; */
+    display:inline-block 
+};
+
+div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#btnDiv {
+    display: flex;
+    justify-content: flex-end;
+};

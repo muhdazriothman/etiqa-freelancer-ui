@@ -1,0 +1,49 @@
+<div nz-row>
+  <div nz-col>
+    <h4 nz-typography>Freelancer Directory</h4>
+  </div>
+
+  <div id="btnDiv" nz-col nzFlex="auto">
+    <button nz-button nzType="primary" routerLink="/freelancer/add">Add</button>
+  </div>
+</div>
+
+<div nz-row>
+  <div nz-col nzFlex="auto">
+    <nz-divider></nz-divider>
+  </div>
+</div>
+
+<div nz-row>
+  <div nz-col nzFlex="auto">
+    <nz-table #freelancerTable [nzData]="freelancers" [nzLoading]="loading">
+      <thead>
+        <tr>
+          <th>Item No.</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>Skills</th>
+          <th>Hobbies</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let freelancer of freelancerTable.data; let i = index">
+          <td>{{i + 1}}</td>
+          <td>{{freelancer.username}}</td>
+          <td>{{freelancer.email}}</td>
+          <td>{{freelancer.phoneNo}}</td>
+          <td>{{freelancer.skills}}</td>
+          <td>{{freelancer.hobbies}}</td>
+          <td>
+            <nz-button-group>
+              <button nz-button nzType="primary" (click)="editFreelancer(freelancer._id)">Edit</button>
+              <button nz-button nzType="danger" (click)="deleteFreelancer(freelancer._id)">Delete</button>
+            </nz-button-group>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+</div>
