@@ -5,9 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-// import { AddFreelancerComponent } from './components/add-freelancer/add-freelancer.component';
-// import { FreelancerDetailsComponent } from './components/freelancer-details/freelancer-details.component';
-// import { FreelancerListComponent } from './pages/freelancer-list/freelancer-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
@@ -26,9 +23,6 @@ registerLocaleData(en);
 @NgModule({
   declarations: [
     AppComponent,
-    // AddFreelancerComponent,
-    // FreelancerDetailsComponent,
-    // FreelancerListComponent
   ],
   imports: [
     BrowserModule,
