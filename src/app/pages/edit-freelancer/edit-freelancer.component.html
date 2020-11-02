@@ -1,12 +1,23 @@
 <div nz-row>
-  <div nz-col>
+  <div nz-col nzSpan="10" style="margin-bottom: -15px;">
+    <h4 nz-typography>Edit Freelancer</h4>
+  </div>
+  <div nz-col nzFlex="auto">
+    <div style="float: right;">
+      <button nz-button nzType="default" routerLink="/freelancer" [disabled]="disableInput">Back</button>
+      <button nz-button nzType="primary" (click)="saveFreelancer()" [disabled]="disableInput">Save</button>
+    </div>
+  </div>
+
+
+  <!-- <div nz-col>
     <h4 nz-typography>Edit Freelancer</h4>
   </div>
 
   <div id="btnDiv" nz-col nzFlex="auto">
       <button nz-button nzType="default" routerLink="/freelancer" [disabled]="disableInput">Back</button>
       <button nz-button nzType="primary" (click)="saveFreelancer()" [disabled]="disableInput">Save</button>
-  </div>
+  </div> -->
 </div>
 
 <div nz-row>

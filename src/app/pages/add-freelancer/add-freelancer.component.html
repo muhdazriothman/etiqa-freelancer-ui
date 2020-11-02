@@ -2,10 +2,11 @@
   <div nz-col>
     <h4 nz-typography>Add New Freelancer</h4>
   </div>
-
-  <div id="btnDiv" nz-col nzFlex="auto">
+  <div nz-col nzFlex="auto">
+    <div style="float: right;">
       <button nz-button nzType="default" routerLink="/freelancer">Back</button>
       <button nz-button nzType="primary" (click)="saveFreelancer()" [disabled]="disableInput">Save</button>
+    </div>
   </div>
 </div>
 
