@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const baseUrl = 'https://gentle-escarpment-79870.herokuapp.com/api/v1.0';
+const baseUrl = 'https://freelancer-svc.herokuapp.com/api/v1.0';
 
 @Injectable({
   providedIn: 'root'
@@ -12,23 +12,23 @@ export class FreelancerService {
   constructor(private http: HttpClient) { }
 
   getAllFreelancer(): Observable<any> {
-    return this.http.get(`${baseUrl}/user`);
+    return this.http.get(`${baseUrl}/freelancer`);
   }
 
   getFreelancerById(id): Observable<any> {
-    return this.http.get(`${baseUrl}/user/${id}`);
+    return this.http.get(`${baseUrl}/freelancer/${id}`);
   }
 
   createFreelancer(data): Observable<any> {
-    return this.http.post(`${baseUrl}/user`, data);
+    return this.http.post(`${baseUrl}/freelancer`, data);
   }
 
   updateFreelancer(id, data): Observable<any> {
-    return this.http.put(`${baseUrl}/user/${id}`, data);
+    return this.http.put(`${baseUrl}/freelancer/${id}`, data);
   }
 
   deleteFreelancer(id): Observable<any> {
-    return this.http.delete(`${baseUrl}/user/${id}`);
+    return this.http.delete(`${baseUrl}/freelancer/${id}`);
   }
 
   getAllSkill(): Observable<any> {

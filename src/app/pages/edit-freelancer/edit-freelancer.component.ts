@@ -12,7 +12,7 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
 export class EditFreelancerComponent implements OnInit {
   freelancer = {
     _id: '',
-    username: '',
+    name: '',
     email: '',
     phoneNo: '',
     skills: [],
@@ -43,6 +43,8 @@ export class EditFreelancerComponent implements OnInit {
 
   ngOnInit(): void {
     this.getFreelancerById(this.route.snapshot.paramMap.get('id'));
+    this.retrieveSkillsSelection();
+    this.retrieveHobbiessSelection();
   }
 
   getFreelancerById(id): void {
@@ -51,7 +53,7 @@ export class EditFreelancerComponent implements OnInit {
       .subscribe(
         data => {
           this.freelancer._id = data._id;
-          this.freelancer.username = data.username;
+          this.freelancer.name = data.name;
           this.freelancer.email = data.email;
           this.freelancer.phoneNo = data.phoneNo;
           this.freelancer.skills = data.skills;
@@ -85,6 +87,46 @@ export class EditFreelancerComponent implements OnInit {
           this.createNotification('error', 'Error', errorMessage);
         }).add(() => {
           this.disableInput = false;
+        });
+  }
+
+  retrieveSkillsSelection(): void {
+    this.skillLoading = true;
+    this.freelancerService.getAllSkill()
+      .subscribe(
+        data => {
+          const children: Array<{ label: string; value: string }> = [];
+          if (data && data.length > 0) {
+            for (const skill of data) {
+              children.push({ label: skill, value: skill });
+            }
+          }
+          this.skillOptions = children;
+        },
+        error => {
+          console.log(error);
+        }).add(() => {
+          this.skillLoading = false;
+        });
+  }
+
+  retrieveHobbiessSelection(): void {
+    this.hobbyLoading = true;
+    this.freelancerService.getAllHobby()
+      .subscribe(
+        data => {
+          const children: Array<{ label: string; value: string }> = [];
+          if (data && data.length > 0) {
+            for (const skill of data) {
+              children.push({ label: skill, value: skill });
+            }
+          }
+          this.hobbyOptions = children;
+        },
+        error => {
+          console.log(error);
+        }).add(() => {
+          this.hobbyLoading = false;
         });
   }
 }

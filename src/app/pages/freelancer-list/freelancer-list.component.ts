@@ -22,7 +22,7 @@ export class FreelancerListComponent implements OnInit {
     this.freelancerService.getAllFreelancer()
       .subscribe(
         data => {
-          this.freelancers = data;
+          this.freelancers = data && data.length > 0 ? data : [];
         },
         error => {
           console.log(error);

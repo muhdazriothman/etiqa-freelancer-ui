@@ -12,7 +12,7 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
 
 export class AddFreelancerComponent implements OnInit {
   freelancer = {
-    username: '',
+    name: '',
     email: '',
     phoneNo: '',
     skills: [],
@@ -50,7 +50,7 @@ export class AddFreelancerComponent implements OnInit {
     console.log('selectedSkill', this.selectedSkill);
 
     const data = {
-      username: this.freelancer.username,
+      name: this.freelancer.name,
       email: this.freelancer.email,
       phoneNo: this.freelancer.phoneNo,
       skills: this.selectedSkill,
@@ -79,8 +79,10 @@ export class AddFreelancerComponent implements OnInit {
       .subscribe(
         data => {
           const children: Array<{ label: string; value: string }> = [];
-          for (const skill of data) {
-            children.push({ label: skill, value: skill });
+          if (data && data.length > 0) {
+            for (const skill of data) {
+              children.push({ label: skill, value: skill });
+            }
           }
           this.skillOptions = children;
         },
@@ -97,8 +99,10 @@ export class AddFreelancerComponent implements OnInit {
       .subscribe(
         data => {
           const children: Array<{ label: string; value: string }> = [];
-          for (const skill of data) {
-            children.push({ label: skill, value: skill });
+          if (data && data.length > 0) {
+            for (const skill of data) {
+              children.push({ label: skill, value: skill });
+            }
           }
           this.hobbyOptions = children;
         },

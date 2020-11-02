@@ -21,7 +21,7 @@
       <nz-form-item>
         <nz-form-label [nzSpan]="2" nzFor="name">Name</nz-form-label>
         <nz-form-control [nzSpan]="6">
-          <input nz-input [(ngModel)]="freelancer.username" name="username" type="text" id="username" [disabled]="disableInput">
+          <input nz-input [(ngModel)]="freelancer.name" name="name" type="text" id="name" [disabled]="disableInput">
         </nz-form-control>
       </nz-form-item>
       <nz-form-item>
@@ -65,56 +65,3 @@
     </form>
   </div>
 </div>
-
-
-<!-- <div style="width: 400px; margin: auto;">
-    <div *ngIf="currentFreelancer" class="edit-form">
-      <h4>Freelancer</h4>
-    <form>
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" class="form-control" id="username" required [(ngModel)]="freelancer.username" name="username" />
-        </div>
-    
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input class="form-control" id="email" required [(ngModel)]="freelancer.email" name="email" />
-        </div>
-    
-        <div class="form-group">
-            <label for="phoneNo">Phone Number</label>
-            <input class="form-control" id="phoneNo" required [(ngModel)]="freelancer.phoneNo" name="phoneNo" />
-        </div>
-    
-        <div class="form-group">
-            <label for="skills">Skills</label>
-            <input class="form-control" id="skills" required [(ngModel)]="freelancer.skills" name="skills" />
-        </div>
-    
-        <div class="form-group">
-            <label for="hobbies">Hobbies</label>
-            <input class="form-control" id="hobbies" required [(ngModel)]="freelancer.hobbies" name="hobbies" />
-        </div>
-    </form> -->
-  
-  
-      <!-- <button class="badge badge-danger mr-2" (click)="deleteFreelancer()">
-        Delete
-      </button>
-  
-      <button
-        type="submit"
-        class="badge badge-success"
-        (click)="updateFreelancer()"
-      >
-        Update
-      </button>
-      <p>{{ message }}</p>
-    </div>
-  
-    <div *ngIf="!currentFreelancer">
-      <br />
-      <p>Cannot access this Freelancer...</p>
-    </div>
-  </div> -->
-  
